@@ -212,6 +212,13 @@ return [
             'can' =>  'admin.peliculas.index'
         ],
         [
+            'text' => 'Editar Película',
+            'url'  => 'admin/peliculas/edit',
+            'icon' => 'fas fa-fw fa-edit',
+            'active' => ['admin/peliculas/edit*'],
+            'can' => 'admin.peliculas.edit'
+        ],
+        [
             'text' => 'Carrusel',
             'url'  => 'admin/sliders',
             'icon' => 'fas fa-fw fa-images',
@@ -230,6 +237,7 @@ return [
             'icon' => 'far fa-fw fa-edit',
             'can'  => 'admin.posts.create'
         ],
+
         [
             'text' => 'Añadir Película',
             'url'  => 'admin/peliculas/create',

@@ -7,6 +7,10 @@ use App\Http\Controllers\Admin\PeliculaController;
 use App\Http\Controllers\Byn;
 use App\Http\Controllers\TenemosController;
 use App\Http\Controllers\ObjetivosController;
+use App\Http\Controllers\PublicacionesController;
+use App\Http\Controllers\PerfilesController;
+use App\Http\Controllers\MaterialController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +52,10 @@ Route::controller(FrontController::class)->group(function () {
 
 
     Route::get('pelicula', [PeliculaController::class, 'index'])->name('admin.peliculas.index');
+    Route::get('/publicaciones', [PublicacionesController::class, 'showPublicaciones'])->name('pages.publicaciones');
+    Route::get('/perfiles', [PerfilesController::class, 'showPerfiles'])->name('pages.perfiles');
+    Route::get('/material', [MaterialController::class, 'showMaterial'])->name('pages.material');
+
 
 
 
@@ -61,6 +69,10 @@ Route::controller(ContactController::class)->group(function () {
     Route::get('/contactanos', 'showContactForm')->name('pages.contactanos');
     Route::get('/contactanos/thankyou', 'showThankYouPage')->name('pages.thankyou');
     Route::post('/contactanos', 'submitContactForm')->name('contact.submit');
+
+
+
+
 });
 
 /*Route::prefix('admin')->middleware(['auth'])->group(function () {

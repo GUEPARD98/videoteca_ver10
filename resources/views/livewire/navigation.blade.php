@@ -62,20 +62,63 @@
                     </div>
                 </a>
             </div>
-            <div class="flex-grow relative mx-4">
-                <form action="{{ route('posts.search') }}" method="GET" class="relative">
-                    <input type="text" id="search-navbar" name="search"
-                        class="block w-full p-2 pl-10 text-sm text-gray-200 border border-gray-700 rounded-lg bg-gray-800 placeholder-gray-400 focus:ring-red-500 focus:border-red-500 transition-colors"
-                        placeholder="Buscar..." value="{{ request('search') }}">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                </form>
+
+            <!-- Contenedor del VMS -->
+            <div class="vms-container">
+                <div class="vms-message">
+                    <p>¡Explora nuestro Archivo Fotografico Y Fílmico Del Chocó! - Descubre nuestro
+                        patrimonio
+                        cultural.</p>
+                </div>
             </div>
+
+            <!-- Estilos CSS del VMS -->
+            <style>
+                /* Contenedor del VMS */
+                .vms-container {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    position: relative;
+                }
+
+                /* Estilo del mensaje VMS */
+                .vms-message {
+                    display: inline-block;
+                    padding-left: 100%;
+                    /* El mensaje empezará fuera del contenedor */
+                    animation: scrollMessage 15s linear infinite;
+                    /* La animación para desplazar el texto */
+                }
+
+                .vms-message p {
+                    display: inline;
+                    color: rgb(2, 20, 32);
+                    /* Color verde tipo LED */
+                    font-weight: bold;
+                    font-size: 1rem;
+                    /* Ajusta el tamaño según el menú */
+                }
+
+                /* Animación para desplazar el mensaje de derecha a izquierda */
+                @keyframes scrollMessage {
+                    from {
+                        transform: translateX(100%);
+                    }
+
+                    to {
+                        transform: translateX(-100%);
+                    }
+                }
+
+                /* Responsividad */
+                @media (max-width: 768px) {
+                    .vms-message p {
+                        font-size: 0.85rem;
+                        /* Ajusta el tamaño del texto en pantallas pequeñas */
+                    }
+                }
+            </style>
+
             <button data-collapse-toggle="main-menu" type="button"
                 class="inline-flex items-center p-2 text-gray-500 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none transition-colors">
                 <span class="sr-only">Open main menu</span>
@@ -85,8 +128,14 @@
                         clip-rule="evenodd"></path>
                 </svg>
             </button>
+
+
+
+
             <div id="main-menu" class="items-center justify-between hidden w-full md:flex md:w-auto">
                 <ul class="flex flex-col md:flex-row md:space-x-8">
+
+
                     <li>
                         <a href="/"
                             class="block py-2 px-4 text-gray-300 hover:bg-red-600 hover:text-white rounded-md {{ request()->routeIs('pages.index') ? 'font-bold' : '' }} transition-colors"><b>Inicio</b></a>
@@ -95,14 +144,16 @@
                         <a href="{{ route('pages.comunicacion') }}"
                             class="block py-2 px-4 text-gray-300 hover:bg-red-600 hover:text-white rounded-md {{ request()->routeIs('pages.comunicacion') ? 'font-bold' : '' }} transition-colors"><b>Noticias</b></a>
                     </li>
+
                     <li>
                         <a href="{{ route('pages.peliculas') }}"
                             class="block py-2 px-4 text-gray-300 hover:bg-red-600 hover:text-white rounded-md {{ request()->routeIs('pages.peliculas') ? 'font-bold' : '' }} transition-colors"><b>Videoteca</b></a>
                     </li>
+
                     <li class="relative">
                         <div id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown"
                             class="py-2 pl-3 pr-4 flex cursor-pointer items-center text-gray-300 hover:text-white rounded-md hover:bg-red-600 md:p-0 transition-colors">
-                            <br><br><b>Institucional</b>
+                            <b>Institucional</b>
                             <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd"
                                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -131,7 +182,15 @@
                                 </li>
                                 <li>
                                     <a href="{{ route('pages.byn') }}"
-                                        class="block px-4 py-2 text-gray-300 hover:bg-red-600 hover:text-white rounded-md transition-colors"><b>Documental</b></a>
+                                        class="block px-4 py-2 text-gray-300 hover:bg-red-600 hover:text-white rounded-md transition-colors"><b>Publicaciones</b></a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('pages.publicaciones') }}"
+                                        class="block px-4 py-2 text-gray-300 hover:bg-red-600 hover:text-white rounded-md transition-colors"><b>Investigaciones</b></a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('pages.material') }}"
+                                        class="block px-4 py-2 text-gray-300 hover:bg-red-600 hover:text-white rounded-md transition-colors"><b>Archivos</b></a>
                                 </li>
                                 <li>
                                     <a href="{{ route('pages.contratacion') }}"
@@ -142,24 +201,30 @@
                                     <a href="{{ route('pages.tenemos') }}"
                                         class="block px-4 py-2 text-gray-300 hover:bg-red-600 hover:text-white rounded-md transition-colors"><b>Tenemos</b></a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('pages.perfiles') }}"
+                                        class="block px-4 py-2 text-gray-300 hover:bg-red-600 hover:text-white rounded-md transition-colors"><b>Equipo
+                                            De Trabajo</b></a>
+                                </li>
                             </ul>
                         </div>
                     </li>
-                    <li class="relative">
-                        <div id="mega-menu-icons-dropdown-button2" data-dropdown-toggle="mega-menu-icons-dropdown2"
-                            class="py-2 pl-3 pr-4 flex cursor-pointer items-center text-gray-300 hover:text-white rounded-md hover:bg-red-600 md:p-0 transition-colors">
+
                     <li>
                         <a href="{{ route('pages.educacion') }}"
-                            class="block py-2 px-4 text-gray-300 hover:bg-red-600 hover:text-white rounded-md {{ request()->routeIs('pages.contactanos') ? 'font-bold' : '' }} transition-colors"><b>Servicios</b></a>
-                    </li>
+                            class="block py-2 px-4 text-gray-300 hover:bg-red-600 hover:text-white rounded-md {{ request()->routeIs('pages.educacion') ? 'font-bold' : '' }} transition-colors"><b>Servicios</b></a>
                     </li>
 
                     <li>
                         <a href="{{ route('pages.contactanos') }}"
                             class="block py-2 px-4 text-gray-300 hover:bg-red-600 hover:text-white rounded-md {{ request()->routeIs('pages.contactanos') ? 'font-bold' : '' }} transition-colors"><b>Contáctanos</b></a>
                     </li>
+
                 </ul>
+
             </div>
         </div>
     </nav>
+
+
 </header>

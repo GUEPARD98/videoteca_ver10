@@ -3,11 +3,11 @@
 @section('title', 'Lista de Películas')
 
 @section('content_header')
-    <h1>Lista de Películas</h1>
+    <h1 class="text-danger">Lista de Películas</h1>
 @stop
 
 @section('content')
-    <div class="card">
+    <div class="card shadow-sm border-danger">
         <div class="card-body">
             <a href="{{ route('admin.peliculas.create') }}" class="btn btn-primary mb-3">Agregar Nueva Película</a>
 
@@ -17,8 +17,8 @@
                 </div>
             @endif
 
-            <table class="table mt-3">
-                <thead>
+            <table class="table table-striped mt-3">
+                <thead class="table-dark">
                     <tr>
                         <th>Título</th>
                         <th>Descripción</th>
@@ -26,7 +26,7 @@
                         <th>Duración (min)</th>
                         <th>Categoría</th>
                         <th>Lugar de Grabación</th>
-                        <th>Fecha de Lanzamiento</th> <!-- Nueva columna agregada -->
+                        <th>Fecha de Lanzamiento</th>
                         <th>Portada</th>
                         <th>Acciones</th>
                     </tr>
@@ -41,10 +41,11 @@
                             <td>{{ $movie->categoria ?? 'N/A' }}</td>
                             <td>{{ $movie->lugar_grabacion ?? 'N/A' }}</td>
                             <td>{{ $movie->fecha_creacion ? \Carbon\Carbon::parse($movie->fecha_creacion)->format('d/m/Y') : 'N/A' }}
-                            </td> <!-- Mostrar fecha de lanzamiento -->
+                            </td>
                             <td>
                                 @if ($movie->poster_imagen)
-                                    <img src="{{ asset($movie->poster_imagen) }}" width="100" alt="Portada">
+                                    <img src="{{ asset($movie->poster_imagen) }}" width="100" alt="Portada"
+                                        class="img-thumbnail">
                                 @else
                                     <span>No disponible</span>
                                 @endif
@@ -63,7 +64,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="text-center">No hay películas disponibles.</td>
+                            <td colspan="9" class="text-center">No hay películas disponibles.</td>
                         </tr>
                     @endforelse
                 </tbody>

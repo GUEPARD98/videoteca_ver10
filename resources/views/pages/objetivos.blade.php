@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="w-full relative">
-        <!-- Encabezado con imagen -->
+
         <!-- Encabezado con imagen -->
         <div class="relative h-72 flex items-center justify-center overflow-hidden">
             <img src="{{ asset('images/portada.jpg') }}" alt="Encabezado de la página"
@@ -15,7 +15,6 @@
                             <i class="fa-solid fa-house text-red-700"></i>
                             <a href="/" class="hover:text-red-500">Inicio</a> /
                         </li>
-
                         <li class="inline-flex items-center">
                             <a href="/objetivos" class="hover:text-red-500">Objetivos</a>
                         </li>

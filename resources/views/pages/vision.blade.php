@@ -4,20 +4,20 @@
         <!-- Encabezado con imagen -->
         <div class="relative h-72 flex items-center justify-center overflow-hidden">
             <img src="{{ asset('images/portada.jpg') }}" alt="Encabezado de la página"
-                class="absolute inset-0 w-full h-full object-cover">
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-105">
             <div class="absolute inset-0 bg-black opacity-40"></div>
             <div class="z-10 text-center text-white">
-                <h1 class="font-extrabold text-4xl text-red-700">Archivo Fotografico Y Filmico Del Chocó</h1>
-                <h2 class="text-xl mt-2">Visión</h2>
+                <h1 class="font-extrabold text-5xl lg:text-6xl text-red-700">Archivo Fotográfico y Fílmico del Chocó</h1>
+                <h2 class="text-2xl mt-2">Visión</h2>
                 <nav class="flex justify-center my-4 text-sm" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3 text-white">
                         <li class="inline-flex items-center gap-2">
                             <i class="fa-solid fa-house text-red-700"></i>
-                            <a href="/" class="hover:text-red-500">Inicio</a> /
+                            <a href="/" class="hover:text-red-500 transition duration-200">Inicio</a> /
                         </li>
 
                         <li class="inline-flex items-center">
-                            <a href="/vision" class="hover:text-red-500">Visión</a>
+                            <a href="/vision" class="hover:text-red-500 transition duration-200">Visión</a>
                         </li>
                     </ol>
                 </nav>
@@ -41,16 +41,16 @@
                     </p>
                 </div>
                 <div class="flex flex-wrap gap-4 justify-center">
-                    <img class="w-44 h-44 object-cover rounded-lg shadow-md border-4 border-red-600"
+                    <img class="w-44 h-44 object-cover rounded-lg shadow-md border-4 border-red-600 transition-transform duration-200 transform hover:scale-105"
                         src="{{ asset('images/minear.jpg') }}" alt="Imagen 1">
-                    <img class="w-44 h-44 object-cover rounded-lg shadow-md border-4 border-red-600"
+                    <img class="w-44 h-44 object-cover rounded-lg shadow-md border-4 border-red-600 transition-transform duration-200 transform hover:scale-105"
                         src="{{ asset('images/cielo.jpg') }}" alt="Imagen 2">
-                    <img class="w-44 h-44 object-cover rounded-lg shadow-md border-4 border-red-600"
+                    <img class="w-44 h-44 object-cover rounded-lg shadow-md border-4 border-red-600 transition-transform duration-200 transform hover:scale-105"
                         src="{{ asset('images/atletismo.jpg') }}" alt="Imagen 3">
-                    <img class="w-44 h-44 object-cover rounded-lg shadow-md border-4 border-red-600"
+                    <img class="w-44 h-44 object-cover rounded-lg shadow-md border-4 border-red-600 transition-transform duration-200 transform hover:scale-105"
                         src="{{ asset('images/periodico.jpg') }}" alt="Imagen 4">
-                    <img class="w-44 h-44 object-cover rounded-lg shadow-md border-4 border-red-600"
-                        src="{{ asset('images/indi.jpg') }}" alt="Imagen 4">
+                    <img class="w-44 h-44 object-cover rounded-lg shadow-md border-4 border-red-600 transition-transform duration-200 transform hover:scale-105"
+                        src="{{ asset('images/indi.jpg') }}" alt="Imagen 5">
                 </div>
             </div>
         </div>

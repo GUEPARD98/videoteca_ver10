@@ -5,7 +5,7 @@
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="container mx-auto px-4 relative z-10 text-center">
             <h1 class="font-extrabold text-7xl text-red-500 mb-2 drop-shadow-lg">{{ $pelicula->titulo }}</h1>
-            <h2 class="text-white text-4xl font-medium drop-shadow-lg">Videoteca Cinemática</h2>
+            <h2 class="text-white text-4xl font-medium drop-shadow-lg">Catalogo Audiovisual</h2>
             <nav class="flex justify-center mt-4" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3 text-white">
                     <li class="inline-flex items-center gap-2">

@@ -3,93 +3,117 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1 style="color: white; text-align: center;">Dashboard</h1>
 @stop
 
 @section('content')
     <div>
 
-        <div class="small-box bg-gradient-success">
+        {{-- Caja de usuarios --}}
+        <div class="small-box bg-gradient-success"
+            style="border: 2px solid #A6123A; border-radius: 15px; transition: transform 0.3s; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
             <div class="inner">
                 <h3>{{ $users }}</h3>
                 <p>Usuarios registrados</p>
             </div>
             <div class="icon">
-                <i class="fas fa-solid fa-users"></i>>
+                <i class="fas fa-users" style="color: white;"></i>
             </div>
-            <a href="{{ route('admin.users.index') }}" class="small-box-footer">
+            <a href="{{ route('admin.users.index') }}" class="small-box-footer text-white"
+                style="background-color: #A6123A; padding: 10px; border-radius: 15px;">
                 Ver todos los usuarios <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>
 
-        <div class="small-box bg-info">
+        {{-- Caja de artículos --}}
+        <div class="small-box bg-info"
+            style="border: 2px solid #A6123A; border-radius: 15px; transition: transform 0.3s; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
             <div class="inner">
                 <h3>{{ $posts }}</h3>
-                <p>Numero de articulos</p>
+                <p>Número de artículos</p>
             </div>
             <div class="icon">
-                <i class="fas fa-regular fa-newspaper"></i>
+                <i class="fas fa-newspaper" style="color: white;"></i>
             </div>
-            <a href="{{ route('admin.posts.index') }}" class="small-box-footer">
-                ver articulos <i class="fas fa-arrow-circle-right"></i>
+            <a href="{{ route('admin.posts.index') }}" class="small-box-footer text-white"
+                style="background-color: #A6123A; padding: 10px; border-radius: 15px;">
+                Ver artículos <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>
 
-
-        <div class="small-box " style="background: #A6123A">
+        {{-- Caja de etiquetas --}}
+        <div class="small-box"
+            style="background-color: #A6123A; border: 2px solid #A6123A; border-radius: 15px; transition: transform 0.3s; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
             <div class="inner">
                 <h3 class="text-white">{{ $tags }}</h3>
-                <p class="text-white">Numero de etiquetas</p>
+                <p class="text-white">Número de etiquetas</p>
             </div>
             <div class="icon">
-                <i class="fas fa-solid fa-tags"></i>
+                <i class="fas fa-tags" style="color: white;"></i>
             </div>
-            <a href="{{ route('admin.tags.index') }}" class="small-box-footer">
-                ver etiquetas <i class="fas fa-arrow-circle-right"></i>
+            <a href="{{ route('admin.tags.index') }}" class="small-box-footer text-white"
+                style="background-color: #A6123A; padding: 10px; border-radius: 15px;">
+                Ver etiquetas <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>
 
-        {{--
-    <div class="small-box " style="background: #71A63C">
-        <div class="inner">
-            <h3 class="text-white">{{$categories}}</h3>
-            <p class="text-white">Numero de categorias</p>
-        </div>
-        <div class="icon">
-            <i class="fas fa-solid fa-barcode"></i>
-        </div>
-        <a href="{{route('admin.categories.index')}}" class="small-box-footer">
-            ver categorias <i class="fas fa-arrow-circle-right"></i>
-        </a>
-    </div> --}}
-
-        <div class="small-box " style="background: #71A63C">
-
-            <div class="icon">
-                <i class="fas fa-solid fa-barcode"></i>
-            </div>
-            <a href="{{ route('admin.categories.index') }}" class="small-box-footer">
-                ver comentarios <i class="fas fa-arrow-circle-right"></i>
-            </a>
-        </div>
-
-        <div class="small-box " style="background: #A6123A">
+        {{-- Caja de archivos --}}
+        <div class="small-box"
+            style="background-color: #A6123A; border: 2px solid #A6123A; border-radius: 15px; transition: transform 0.3s; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
             <div class="inner">
                 <h3 class="text-white">{{ $documents }}</h3>
-                <p class="text-white">Numero de archivos</p>
+                <p class="text-white">Número de archivos</p>
             </div>
             <div class="icon">
-                <i class="fas fa-solid fa-barcode"></i>
+                <i class="fas fa-barcode" style="color: white;"></i>
             </div>
-            <a href="{{ route('admin.archivos.index') }}" class="small-box-footer">
-                ver archivos <i class="fas fa-arrow-circle-right"></i>
+            <a href="{{ route('admin.archivos.index') }}" class="small-box-footer text-white"
+                style="background-color: #A6123A; padding: 10px; border-radius: 15px;">
+                Ver archivos <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>
     </div>
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+    <style>
+        /* Fondo oscuro */
+        body {
+            background-color: #121212;
+        }
+
+        /* Estilos futuristas para las cajas (small-box) */
+        .small-box {
+            position: relative;
+            display: block;
+            margin-bottom: 20px;
+            color: white;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .small-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        }
+
+        .small-box-footer {
+            display: block;
+            padding: 10px;
+            background-color: #A6123A;
+            color: white;
+            text-align: center;
+            border-radius: 15px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .small-box-footer:hover {
+            background-color: #FF4C4C;
+        }
+
+        .icon {
+            font-size: 60px;
+        }
+    </style>
 @stop
 
 @section('js')

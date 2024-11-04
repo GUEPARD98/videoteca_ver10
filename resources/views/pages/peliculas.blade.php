@@ -1,13 +1,13 @@
 <x-app-layout>
     <div class="min-h-screen bg-black text-white">
         <!-- Encabezado con imagen -->
-        <div class="relative bg-cover bg-center h-64 flex items-center"
+        <div class="relative bg-cover bg-center h-96 flex items-center overflow-hidden"
             style="background-image: url('{{ asset('images/portada.jpg') }}');">
             <div class="absolute inset-0 bg-black opacity-60"></div>
-            <div class="container mx-auto px-4 relative z-10">
+            <div class="container mx-auto px-4 relative z-10 text-center">
                 <h1 class="font-extrabold text-5xl text-red-500">Videoteca</h1>
                 <h2 class="text-white text-2xl font-medium mt-2">Nuestra Colección</h2>
-                <nav class="flex mt-4" aria-label="Breadcrumb">
+                <nav class="flex justify-center mt-4" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3 text-white">
                         <li class="inline-flex items-center gap-2">
                             <i class="fa-solid fa-house text-red-500"></i>
@@ -34,13 +34,13 @@
 
             <!-- Formulario de búsqueda -->
             <form action="{{ route('admin.peliculas.index') }}" method="GET" class="mb-6">
-                <div class="flex flex-col md:flex-row items-center md:space-x-4">
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
                     <input type="text" name="search" placeholder="Buscar por título, descripción, autor..."
                         value="{{ request()->input('search') }}"
-                        class="w-full md:w-1/3 p-3 bg-gray-800 border border-gray-700 rounded-lg mb-4 md:mb-0 text-white placeholder-gray-400">
+                        class="w-full md:w-1/3 p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400">
 
                     <select name="category"
-                        class="w-full md:w-1/3 p-3 bg-gray-800 border border-gray-700 rounded-lg mb-4 md:mb-0 text-white">
+                        class="w-full md:w-1/3 p-3 bg-gray-800 border border-gray-700 rounded-lg text-white">
                         <option value="" disabled selected>Categoría</option>
                         @foreach ($categories as $cat)
                             <option value="{{ $cat->id }}"
@@ -55,7 +55,7 @@
                         class="w-full md:w-1/3 p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400">
 
                     <button type="submit"
-                        class="mt-4 md:mt-0 p-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-500">
+                        class="w-full md:w-auto p-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-500">
                         Buscar
                     </button>
                 </div>
